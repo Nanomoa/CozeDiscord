@@ -7,7 +7,7 @@ from discord_core.message import Message
 intents = discord.Intents.all()
 intents.messages = True
 
-client = discord.Client(intents=intents, proxy='http://127.0.0.1:7890')
+client = discord.Client(intents=intents)
 
 app = Quart(__name__)
 

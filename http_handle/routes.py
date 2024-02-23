@@ -1,13 +1,21 @@
 import discord
 from quart import Quart, request, jsonify
 
+from config import load_config
 from discord_core.channel import Channel
 from discord_core.message import Message
 
 intents = discord.Intents.all()
 intents.messages = True
 
-client = discord.Client(intents=intents, proxy='http://127.0.0.1:7890')
+client: discord.Client
+
+config = load_config()
+
+if config.coze_discord.proxy_url is not None and config.coze_discord.proxy_url != "":
+    client = discord.Client(intents=intents, proxy=config.coze_discord.proxy_url)
+else:
+    client = discord.Client(intents=intents)
 
 app = Quart(__name__)
 

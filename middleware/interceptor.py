@@ -6,12 +6,12 @@ config = load_config()
 
 
 async def before_request():
-    proxy_secret = request.headers.get('proxy-secret')
-    if not proxy_secret:
+    token = request.headers.get('token')
+    if not token:
         result = {'code': -1, 'message': 'proxy-secret is required.'}
         response = jsonify(result)
         abort(response)
-    if proxy_secret != config.coze_discord.proxy_secret:
+    if token != config.coze_discord.token:
         result = {'code': -1, 'message': 'proxy-secret is invalid.'}
         response = jsonify(result)
         abort(response)

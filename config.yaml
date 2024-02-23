@@ -7,9 +7,11 @@ coze_discord:
   default_channel_id: 
   # 用于频道操作和检测的机器人token
   bot_token: ""
-  # 用户配置
+  # 发信用户配置
   user:
     id: 
     authorization: ""
-  # 请求秘钥
-  proxy_secret: "nanomoa"
+  # 请求秘钥(请求接口时设置请求头token的值)
+  token: "nanomoa"
+  # 代理地址(留空则不使用代理)
+  proxy_url: ""

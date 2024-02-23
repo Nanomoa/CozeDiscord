@@ -73,6 +73,7 @@ class Message:
     async def get_reply(self, channel):
         def check_edit(before, after):
             return before.channel == channel and before.author.id == self.target_bot_id and before.content == after.content
+
         try:
             _, msg = await self.client.wait_for('message_edit', check=check_edit, timeout=180)
 
@@ -93,15 +94,19 @@ class Message:
             target_bot = await self.client.fetch_user(self.target_bot_id)
             channel = await self.client.fetch_channel(channel_id)
             content = f'{target_bot.mention} ' + content
-            msg_sent = await self.create_msg(channel_id, content)
-            if msg_sent is not None:
-                try:
-                    await self.client.wait_for('message', check=self.check_reply, timeout=180)
-                    reply_msg = await self.get_reply(channel)
-                    return reply_msg
-                except Exception as e:
-                    print("Error wait for reply message:", e)
-                    return None
+            try:
+                msg_sent = await self.create_msg(channel_id, content)
+                if msg_sent is not None:
+                    try:
+                        await self.client.wait_for('message', check=self.check_reply, timeout=180)
+                        reply_msg = await self.get_reply(channel)
+                        return reply_msg
+                    except Exception as e:
+                        print("Error wait for reply message:", e)
+                        return None
+            except Exception as e:
+                print("Error sending message: ", e)
+                return None
         except Exception as e:
             print("Failed to get target bot or channel: ", e)
             return None

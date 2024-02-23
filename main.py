@@ -1,14 +1,15 @@
 import asyncio
 
-import discord
 from config import load_config
 from http_handle.routes import app, client
 from middleware.interceptor import Interceptor
 
-intents = discord.Intents.all()
-intents.messages = True
-
 config = load_config()
+
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
 
 
 async def run_quart_app():

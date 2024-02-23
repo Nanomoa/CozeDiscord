@@ -1,0 +1,15 @@
+coze_discord:
+  # 服务器id
+  guild_id: 1206901063224000512
+  # CozeBot id
+  target_bot_id: 1206901740331597845
+  # 默认频道id
+  default_channel_id: 1206901063903350786
+  # 用于频道操作和检测的机器人token
+  bot_token: "MTIwNjkwNTg5NjQyMTE3MTIxMA.G6-BiZ.Z93U-8_-cr-f43dldLlaWjbhATzO86kYgqQDBc"
+  # 用户配置
+  user:
+    id: 1206900243384246315
+    authorization: "MTIwNjkwMDI0MzM4NDI0NjMxNQ.G6Nrzk.pINVVMR_4BE7J-Ka072E57RqLUdDmMeleQVeF4"
+  # 请求秘钥
+  proxy_secret: "nanomoa"

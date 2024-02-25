@@ -1,5 +1,6 @@
 import discord
 from quart import Quart, request, jsonify
+from quart_cors import cors
 
 from config import load_config
 from discord_core.channel import Channel
@@ -12,12 +13,17 @@ client: discord.Client
 
 config = load_config()
 
-if config.coze_discord.proxy_url is not None and config.coze_discord.proxy_url != "":
-    client = discord.Client(intents=intents, proxy=config.coze_discord.proxy_url)
+if config.coze_discord.discord.proxy_url is not None and config.coze_discord.discord.proxy_url != "":
+    client = discord.Client(intents=intents, proxy=config.coze_discord.discord.proxy_url)
 else:
     client = discord.Client(intents=intents)
 
 app = Quart(__name__)
+app = cors(
+    app_or_blueprint=app,
+    allow_origin="*",
+    allow_methods=["GET", "POST", "PUT", "DELETE"]
+)
 
 
 @app.route('/api/channel/create', methods=['POST'])

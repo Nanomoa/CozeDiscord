@@ -17,7 +17,7 @@ async def run_quart_app():
 
 
 async def run_discord_client():
-    await client.start(config.coze_discord.bot_token)
+    await client.start(config.coze_discord.discord.bot_token)
 
 
 async def main():

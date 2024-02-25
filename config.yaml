@@ -1,17 +1,26 @@
 coze_discord:
-  # 服务器id
-  guild_id: 
-  # CozeBot id
-  target_bot_id: 
-  # 默认频道id
-  default_channel_id: 
-  # 用于频道操作和检测的机器人token
-  bot_token: ""
-  # 发信用户配置
-  user:
-    id: 
-    authorization: ""
   # 请求秘钥(请求接口时设置请求头token的值)
   token: "nanomoa"
-  # 代理地址(留空则不使用代理)
-  proxy_url: ""
+  # discord 配置
+  discord:
+    # 代理地址(留空则不使用代理)
+    proxy_url: "http://127.0.0.1:7890/"
+    # 服务器id
+    guild_id: 
+    # CozeBot id
+    target_bot_id: 
+    # 默认频道id
+    default_channel_id: 
+    # 用于频道操作和检测的机器人token
+    bot_token: ""
+    # 发信用户配置
+    user:
+      id: 
+      authorization: ""
+  # mysql配置
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "CozeDiscord"
+    username: ""
+    password: ""

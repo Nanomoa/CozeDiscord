@@ -2,7 +2,7 @@
 
 # CozeDiscord
 
-A way to use ChatGpt4 for free by simulating communication behavior with `CozeBot` through a proxy `Discord` user.
+A way to use `ChatGpt4` for free by simulating communication behavior with `CozeBot` through a proxy `Discord` user.
 ---
 
 </div>

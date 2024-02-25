@@ -9,10 +9,10 @@ from discord_core.common import config
 class Message:
     def __init__(self, client: discord.Client):
         self.client = client
-        self.guild_id = config.coze_discord.guild_id
-        self.target_bot_id = config.coze_discord.target_bot_id
-        self.user_id = config.coze_discord.user.id
-        self.user_authorization = config.coze_discord.user.authorization
+        self.guild_id = config.coze_discord.discord.guild_id
+        self.target_bot_id = config.coze_discord.discord.target_bot_id
+        self.user_id = config.coze_discord.discord.user.id
+        self.user_authorization = config.coze_discord.discord.user.authorization
 
     def check_reply(self, message):
         user = self.client.get_user(self.user_id)

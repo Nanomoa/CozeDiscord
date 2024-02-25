@@ -6,7 +6,7 @@ from discord_core.common import config
 class Channel:
     def __init__(self, client: discord.Client):
         self.client = client
-        self.guild_id = config.coze_discord.guild_id
+        self.guild_id = config.coze_discord.discord.guild_id
 
     async def create_channel(self, channel_name):
         try:

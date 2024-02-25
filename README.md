@@ -95,6 +95,9 @@ CozeDiscord, a project that allows you to use `chatgpt4` for free. [Coze](https:
 9. Install all the libraries and run the project
 10. After it finishes running you will see the command line output `Logged in as {your bot's name}`.
 
+## People who starred this github repository!
+[![Stargazers repo roster for @Nanomoa/CozeDiscord](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=Nanomoa&repo=CozeDiscord)](https://github.com/Nanomoa/CozeDiscord)
+
 ## Express gratitude (esp. in public)
 
 **[Coze](https://coze.com/)**: Next-generation AI chatbot building platform.

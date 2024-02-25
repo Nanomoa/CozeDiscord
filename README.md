@@ -16,7 +16,7 @@ CozeDiscord, a project that allows you to use `chatgpt4` for free. [Coze](https:
 - [x] Create a new channel in the server
 - [x] Send a message to `CozeBot` on the specified channel.
 - [x] Support AI drawing
-- [ ] Support for NextChat 
+- [ ] Interfacing with CozeDiscordFrontend
 - [ ] Other (under development)
 
 ## Api Document
